@@ -1,12 +1,21 @@
-import styles from "./header.module.css";
-import LoggedOffHeader from "./LoggedOff/loggedOffHeader";
+import { cookies } from "next/headers";
+import { authKeyword } from "@/utils/Constants/auth";
 
-export default function Header() {
+import styles from "./header.module.css";
+
+import LoggedOffHeader from "./LoggedOff/loggedOffHeader";
+import LoggedOnHeader from "./LoggedOn/loggedOnHeader";
+
+export default async function Header() {
+  const cookieStore = await cookies();
+
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      {cookieStore.get(authKeyword.ACCESS_TOKEN) ? (
+        <LoggedOnHeader />
+      ) : (
         <LoggedOffHeader />
-      </div>
+      )}
     </header>
   );
 }

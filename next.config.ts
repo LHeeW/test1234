@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   /* config options here */
+
   experimental: {
     turbo: {
       rules: {
@@ -17,10 +24,11 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  webpack(config) {
+
+  webpack(config: any) {
     // 1. 기존의 SVG 로더 규칙을 찾습니다.
     const fileLoaderRule = config.module.rules.find((rule: any) =>
-      rule.test?.test?.(".svg")
+      rule.test?.test?.(".svg"),
     );
 
     if (fileLoaderRule) {
@@ -51,7 +59,7 @@ const nextConfig: NextConfig = {
               },
             },
           ],
-        }
+        },
       );
 
       // 4. 기존의 포괄적인 SVG 규칙에서는 .svg를 제외시킵니다.

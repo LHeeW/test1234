@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import LogoImage from "@/../public/images/logo_lg.webp";
-import InputForm from "./(input-form)/input-form";
+import SignUpInputForm from "./(signup-input-form)/signup-input-form";
 
 import styles from "./page.module.css";
 
@@ -12,7 +12,7 @@ export default function Page() {
       <Link href={"/"}>
         <Image src={LogoImage} alt="Logo_Image" unoptimized />
       </Link>
-      <InputForm />
+      <SignUpInputForm />
     </div>
   );
 }

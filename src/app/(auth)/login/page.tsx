@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import LogoImage from "@/../public/images/logo_lg.webp";
-import InputForm from "./(input-form)/input-form";
+import SignInInputForm from "./(signin-input-form)/signin-input-form";
 
 import styles from "./page.module.css";
 
@@ -14,7 +14,7 @@ export default function Page() {
           <Image src={LogoImage} alt="Logo_Image" unoptimized />
         </Link>
         <div className={styles.form_container}>
-          <InputForm />
+          <SignInInputForm />
           <div className={styles.span_container}>
             <span>회원이 아니신가요?</span>
             <Link href={"/signup"}>가입하기</Link>
