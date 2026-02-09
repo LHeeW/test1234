@@ -34,7 +34,7 @@ export default async function LoggedOnHeader() {
             unoptimized
           />
         </Link>
-        <Link className={styles.feed} href={"/epigrams"}>
+        <Link className={styles.feed} href={"/feed"}>
           피드
         </Link>
         <Link className={styles.search} href={"/search"}>

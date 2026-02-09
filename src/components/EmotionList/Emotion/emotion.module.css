@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.8rem;
+  border: none;
+  background-color: var(--background);
+  cursor: pointer;
+}
+
+.emotion_icon {
+  width: 5.6rem;
+  height: 5.6rem;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 1.6rem;
+  background-color: #afbacd26;
+}
+
+.emotion_title {
+  align-self: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #999999;
+}
