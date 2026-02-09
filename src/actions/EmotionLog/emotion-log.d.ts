@@ -2,7 +2,7 @@ import type { components } from "@/types/types";
 
 // 오늘의 감정 저장
 export type PostEmotionLogsTodayRequest =
-  components["schemas"]["UpsertEmotionLogBody"];
+  components["schemas"]["UpsertEmotionLogBody"]["emotion"];
 
 // 오늘의 감정 조회
 export type GetEmotionLogsTodayRequest = {
