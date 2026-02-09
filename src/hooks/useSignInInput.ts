@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { usePostAuthSignInMutation } from "./TanstackQuery/Mutation/use-auth-mutation";
 import { useState } from "react";
 import { validateEmail, validatePassword } from "@/utils/validation";
+import { usePostAuthSignInMutation } from "./TanstackQuery/Mutation/use-auth-mutation";
 
 export const useSignInInput = () => {
   const router = useRouter();
@@ -15,11 +15,12 @@ export const useSignInInput = () => {
   });
 
   const handleSignIn = (formData: FormData) => {
-    const data = Object.fromEntries(formData.entries());
+    const rawFormData = Object.fromEntries(formData.entries());
+    const data = rawFormData as unknown as { email: string; password: string };
 
     const newErrors = {
-      email: validateEmail(data.email as string),
-      password: validatePassword(data.password as string),
+      email: validateEmail(data.email),
+      password: validatePassword(data.password),
     };
 
     setErrors(newErrors);

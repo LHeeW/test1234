@@ -2,13 +2,13 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { SignUpRequest } from "@/actions/Auth/auth";
 import {
   validateEmail,
   validateNickname,
   validatePassword,
   validatePasswordConfirm,
 } from "@/utils/validation";
-
 import { usePostAuthSignUpMutation } from "./TanstackQuery/Mutation/use-auth-mutation";
 
 export const useSignUpInput = () => {
@@ -23,15 +23,16 @@ export const useSignUpInput = () => {
   });
 
   const handleSignUp = (formData: FormData) => {
-    const data = Object.fromEntries(formData.entries());
+    const rawFormData = Object.fromEntries(formData.entries());
+    const data = rawFormData as unknown as SignUpRequest;
 
     const newErrors = {
-      email: validateEmail(data.email as string),
-      nickname: validateNickname(data.nickname as string),
-      password: validatePassword(data.password as string),
+      email: validateEmail(data.email),
+      nickname: validateNickname(data.nickname),
+      password: validatePassword(data.password),
       passwordConfirmation: validatePasswordConfirm(
-        data.password as string,
-        data.passwordConfirmation as string
+        data.password,
+        data.passwordConfirmation,
       ),
     };
 

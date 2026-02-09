@@ -1,10 +1,10 @@
 "use client";
 
 import AuthInput from "@/components/AuthInput/auth-input";
-import styles from "./input-form.module.css";
 import { useSignInInput } from "@/hooks/useSignInInput";
+import styles from "./signiin-input-form.module.css";
 
-export default function InputForm() {
+export default function SignInInputForm() {
   const { handleSignIn, isPending, errors } = useSignInInput();
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
