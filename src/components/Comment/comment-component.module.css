@@ -74,7 +74,7 @@
   color: var(--black-700);
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .container {
     max-width: 33.6rem;
   }

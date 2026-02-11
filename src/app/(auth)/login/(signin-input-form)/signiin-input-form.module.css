@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .form_container {
     max-width: 38.4rem;
   }

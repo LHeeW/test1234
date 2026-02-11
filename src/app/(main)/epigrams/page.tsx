@@ -41,7 +41,7 @@ export default function Page() {
         <div>페이지네이션 버튼</div>
       </div>
 
-      <Link href={"/add"} className={styles.create_epigram_btn}>
+      <Link href={"/addepigram"} className={styles.create_epigram_btn}>
         <PlusIcon />
       </Link>
     </div>

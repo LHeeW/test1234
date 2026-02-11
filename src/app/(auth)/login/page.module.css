@@ -45,7 +45,7 @@
   color: var(--black-500);
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .logo_container {
     gap: 6rem;
   }

@@ -44,7 +44,7 @@ export default function FeedGrid({ children }: FeedGridProps) {
         {children}
       </Masonry>
       <div>페이지네이션 버튼</div>
-      <Link className={styles.add_btn} href={"/add"}>
+      <Link className={styles.add_btn} href={"/addepigram"}>
         <PlusIcon />
       </Link>
     </div>

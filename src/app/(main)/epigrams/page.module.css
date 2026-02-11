@@ -74,7 +74,7 @@
   box-shadow: 0 0.4rem 0.4rem 0 #55555540;
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .epigrams_container,
   .comments_title,
   .comments_container {

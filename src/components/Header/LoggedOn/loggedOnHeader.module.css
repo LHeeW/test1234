@@ -28,7 +28,7 @@
   color: var(--blue-950);
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .container {
     padding: 1.9rem 7.2rem;
   }

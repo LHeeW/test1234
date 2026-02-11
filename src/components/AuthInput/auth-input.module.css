@@ -94,7 +94,7 @@
   outline: 1px solid var(--blue-800);
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .container {
     max-width: 38.4rem;
     gap: 2rem;
