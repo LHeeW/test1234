@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .container {
     display: flex;
     flex-direction: column;

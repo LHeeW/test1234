@@ -7,8 +7,9 @@
   background-image: linear-gradient(#dadada 0.1rem, transparent 0.1rem);
   background-size: 100% 2.5rem;
 
-  --mask: conic-gradient(from -45deg at bottom, #000 90deg, #0000 0) left / 2rem
-    100% repeat-x;
+  --mask:
+    conic-gradient(from -45deg at bottom, #000 90deg, #0000 0) left / 2rem 100%
+    repeat-x;
   --webkit-mask: var(--mask);
   mask: var(--mask);
 }
@@ -70,7 +71,7 @@
   height: 2.4rem;
 }
 
-@media (min-width: 774px) {
+@media (min-width: 744px) {
   .content {
     gap: 2.8rem;
   }
