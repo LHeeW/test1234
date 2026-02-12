@@ -1,7 +1,8 @@
 "use server";
 
-import { authKeyword } from "@/utils/Constants/auth";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
+import { authKeyword } from "@/utils/Constants/auth";
 import initFetch from "../init-fetch";
 import type {
   SignInRequest,
@@ -30,17 +31,18 @@ export async function postSignIn(data: SignInRequest) {
 
     cookiesStore.set(authKeyword.ACCESS_TOKEN, res.accessToken, {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60,
     });
 
     cookiesStore.set(authKeyword.REFRESH_TOKEN, res.refreshToken, {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60 * 24,
     });
+    revalidatePath("/", "layout");
   }
 
   return res;

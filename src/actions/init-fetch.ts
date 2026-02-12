@@ -1,10 +1,10 @@
+import { cookies } from "next/headers";
 import { BASE_URL } from "@/utils/Constants/apis";
 import { authKeyword } from "@/utils/Constants/auth";
-import { cookies } from "next/headers";
 
 export default async function initFetch<T>(
   url: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
 ): Promise<T> {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get(authKeyword.ACCESS_TOKEN)?.value;
@@ -37,13 +37,6 @@ export default async function initFetch<T>(
 
       if (refreshRes.ok) {
         const data = await refreshRes.json();
-
-        cookieStore.set(authKeyword.ACCESS_TOKEN, data.accessToken, {
-          httpOnly: true,
-          secure: true,
-          sameSite: "lax",
-          maxAge: 60 * 60,
-        });
 
         headers.set("Authorization", `Bearer ${data.accessToken}`);
         response = await fetch(`${BASE_URL}${url}`, { ...options, headers });
